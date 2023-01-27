@@ -1,0 +1,450 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+*::selection {
+    background-color: gray;
+}
+
+*::-moz-selection {
+    background: gray;
+}
+ 
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+:root{
+    font-family: Whitney, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    cursor:default;
+    --color-white: #fff;
+    --color-black: #000;
+    --color-dark-mode:#0a0a10;
+    --color-light-mode:#ece7e1;
+    --color-ddd-color: #ddd;
+    --color-gray: #c4c4c4;
+    --color-purple: #8000ff;
+    --color-light-purple: #cf59e6;
+    --color-light-blue: #6bc5f8;
+    --color-navbarBorder-dark:#20222e;
+    
+}
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: #0a0a10;
+}
+::-webkit-scrollbar-thumb{
+   background-color: #8000ff;
+   /* border-radius: 20px; */
+
+}
+#body{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#body::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-image: url(elliot.jpg);
+    background-size: cover;
+    background-position:top;
+    background-repeat: no-repeat;
+    z-index: -1;
+    opacity: 1;
+}
+.navbar{
+    width: 100%;
+    height: 80px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+}
+.logo-div{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.logo{
+    font-size: 3rem;
+    color: white;
+    font-weight: 600;
+}
+.nav-tabs-ul{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 50px;
+}
+.nav-tabs-ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.nav-tabs-ul li{
+    list-style: none;
+    position: relative;
+    cursor: pointer;
+}
+.nav-tabs-ul li::before{
+    content: "";
+    position: absolute;
+    background-color: white;
+    height: 2px ;
+    width: 100%;
+    bottom: -2px;
+    transform: scaleX(0);
+    transition-duration: .3s;
+    transform-origin: left;
+}
+.nav-tabs-ul li:hover::before{
+    transform: scaleX(1);
+    transition-duration: .3s;
+}
+
+
+/* landing page code starts from here */
+.main{
+    width: 100%;
+    height: fit-content;
+    
+}
+.landing-page-container{
+    padding-top:150px ;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-shadow: -100px 0px 1000px black inset;
+    position: relative;
+    overflow: hidden;
+}
+.text-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 300px;
+}
+#hello-friend{
+    font-size: 3.5rem;
+    font-weight: 600;
+    width:fit-content;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    color: var(--color-white);
+}
+#name{
+    font-size: 8rem;
+    font-weight:700;
+    width:fit-content;
+    display: flex;
+    align-items: flex-start;
+    background: -webkit-linear-gradient(135deg,var(--color-light-blue),var(--color-light-purple),var(--color-light-blue),var(--color-light-purple));
+    background: linear-gradient(-45deg,var(--color-light-blue),var(--color-light-purple),var(--color-light-blue),var(--color-light-purple));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400% 400%;
+    -webkit-animation: gradient 3s ease infinite;
+    animation: gradient 3s ease infinite;
+
+}
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    
+    100% {
+        background-position: 0 50%;
+    }
+}
+/* #work:hover{
+    -webkit-animation: vibrate-1 0.3s linear both;
+    animation: vibrate-1 0.3s linear both;
+} */
+#work{
+    font-size: 8rem;
+    font-weight:700;
+    width:fit-content;
+    display: flex;
+    align-items: flex-start;
+    color: var(--color-white);
+    
+}
+  
+#info-para{
+    width: 50%;
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 30px;
+    color: var(--color-ddd-color);
+    line-height: 20px;
+}
+.contact-btn-div{
+    width: 100%;
+    padding-top: 50px;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.info-para{
+    width: 100%;
+font-size: 2rem;
+font-weight: 400;
+padding-top: 30px;
+color: var(--color-ddd-color);
+line-height: 20px;
+display: none;
+}
+
+.contact-btn{
+    border: none;
+    background-color: transparent;
+    color: var(--color-white);
+    height: 50px;
+    width: 200px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition-duration: .3s;
+    border: 2px solid var(--color-white);
+    position: relative;
+}
+.contact-btn::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:white;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transition-duration: .3s;
+    transform-origin: left;
+}
+.contact-btn::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transition-duration: .3s;
+    transform-origin: right;
+}
+.contact-btn:hover::before{
+    transform: scaleX(.5);
+    transition-duration: .3s;
+}
+.contact-btn:hover::after{
+
+    transform: scaleX(.5);
+    transition-duration: .3s;
+}
+.contact-btn:hover{
+    letter-spacing: 2px;
+    transition-duration: .4s;
+    color: var(--color-black);
+}
+.triangle{
+    position: absolute;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    right: 20px;
+    top: 200px;
+    rotate: 30deg;
+}
+.bar{
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+    filter: drop-shadow(0px 0px 5px rgb(255, 0, 0));
+}
+.bar1{
+    transform: rotate(-60deg);
+    transform-origin: left;
+}
+.bar2{
+    transform: rotate(60deg);
+    transform-origin: right;
+}
+.triangle2{
+    position: absolute;
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    left: 20px;
+    top: 300px;
+    rotate: 30deg;
+}
+.triangle3{
+    position: absolute;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    right: 200px;
+    top: 700px;
+    rotate: 100deg;
+}
+.triangle4{
+    position: absolute;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    left: 400px;
+    top: 600px;
+    rotate: 90deg;
+}
+.triangle5{
+    position: absolute;
+    background-color: transparent;
+    width: 50px;
+    height: 50px;
+    left: 100px;
+    top: 800px;
+    rotate: 10deg;
+}
+/* landing page code ends here */
+
+
+
+/* responsive code below*/
+@media screen and (max-width:1920px) {
+    html {
+        font-size: 60%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    html {
+        font-size: 60%;
+    }
+    .text-content{
+        padding-left: 150px;
+    }
+}
+
+@media screen and (max-width:998px) {
+    html {
+        font-size: 55%;
+    }
+     .text-content{
+        padding-left: 100px;
+    }
+    .landing-page-container{
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width:768px) {
+    html {
+        font-size: 50%;
+    }
+ 
+}
+
+@media screen and (max-width:500px) {
+    html {
+        font-size: 45%;  
+    }
+    .text-content{
+        padding-left: 40px;
+    }
+    #hello-friend{
+        width: 100%;
+        font-size: 2.5rem;
+    }
+    #name{
+        width: 100%;
+        font-size: 4.5rem;
+    }
+    #work{
+        width: 100%;
+        font-size: 4.5rem;
+        word-break: keep-all;
+        word-wrap: normal;
+    }
+    #info-para{
+        width: 100%;
+        padding-top: 8px;
+    }
+    
+    .contact-btn{
+        position: absolute;
+        bottom: 100px;
+    }
+    .info-para{
+       display: block;
+       padding-top: 8px;
+    }
+    
+
+
+}
+
+@media screen and (max-width:430px) {
+    html {
+        font-size: 43%;
+    }
+}
+
+@media screen and (max-width:375px) {
+    html {
+        font-size: 40%;
+    }
+    .nav-tabs-ul{
+        display: none;
+    }
+}
+@media screen and (max-width:300px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+/* responsive code above */
+
